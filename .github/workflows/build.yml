@@ -13,7 +13,8 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
-      - uses: android-actions/setup-android@v3
+      # Le SDK Android est déjà préinstallé sur les runners ubuntu-latest (ANDROID_HOME défini) :
+      # pas besoin de setup-android, dont le paquet par défaut "tools" n'existe plus.
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: "8.11.1"
